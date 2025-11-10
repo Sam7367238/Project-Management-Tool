@@ -20,6 +20,7 @@
         @endguest
 
         @auth
+            <a href="{{ route('dashboard') }}">Dashboard</a>
             <form method="POST" action="{{ route('session.destroy') }}">
                 @method("DELETE")
                 @csrf
