@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', "welcome");
@@ -15,5 +16,6 @@ Route::middleware("guest") -> group(function() {
 });
 
 Route::middleware("auth") -> group(function() {
+    Route::resource("tasks", TaskController::class);
     Route::delete("/logout", [SessionController::class, "destroy"]) -> name("session.destroy");
 });
