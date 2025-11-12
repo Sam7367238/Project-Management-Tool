@@ -17,7 +17,7 @@ class RegistrationController extends Controller
         $attributes = $request -> validate([
             "name" => ["required", "max:255"],
             "email" => ["required", "email", "max:255"],
-            "password" => ["required", Password::min(8)]
+            "password" => ["password", "required", Password::min(8)]
         ]);
 
         $user = User::create($attributes);
