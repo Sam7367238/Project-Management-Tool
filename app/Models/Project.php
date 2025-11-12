@@ -15,4 +15,8 @@ class Project extends Model
     public function user(): BelongsTo {
         return $this -> belongsTo(User::class);
     }
+
+    public function tasks() {
+        return $this -> hasMany(ProjectTask::class);
+    }
 }
