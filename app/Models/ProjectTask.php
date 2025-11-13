@@ -10,6 +10,7 @@ class ProjectTask extends Model
 {
     /** @use HasFactory<\Database\Factories\ProjectTaskFactory> */
     use HasFactory;
+    protected $fillable = ["task", "completed"];
 
     public function project(): BelongsTo {
         return $this -> belongsTo(Project::class);
