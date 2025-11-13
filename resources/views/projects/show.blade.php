@@ -5,6 +5,7 @@
 
     <div>
         <p>{{ $project -> name }}</p>
+        <a href="{{ route('projects.projectTasks.index', $project) }}">Tasks</a>
         <hr>
         <p>Created At: {{ $project -> created_at -> diffForHumans() }}</p>
         <a href="{{ route('projects.edit', $project) }}">Edit</a>
