@@ -28,7 +28,7 @@ class SessionController extends Controller
         throw ValidationException::withMessages(["email" => "Credentials do not match."]);
     }
 
-    public function destroy(Request $request) {
+    public function destroy() {
         Session::flush();
         Auth::logout();
 
