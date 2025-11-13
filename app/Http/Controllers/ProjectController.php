@@ -40,7 +40,7 @@ class ProjectController extends Controller
 
         $project = Auth::user() -> projects() -> create($attributes);
 
-        return redirect() -> route("products.show", $project) -> with("status", "Project Created Successfully");
+        return redirect() -> route("projects.show", $project) -> with("status", "Project Created Successfully");
     }
 
     /**
