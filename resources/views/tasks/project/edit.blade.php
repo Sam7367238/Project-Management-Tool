@@ -1,7 +1,7 @@
 <x-layout title="Create Task">
     <h1>Create Task</h1>
 
-    <a href="{{ route('projects.projectTasks.index', $project) }}">Tasks</a>
+    <a href="{{ route('projects.projectTasks.index', [$project, $projectTask]) }}">Task</a>
 
     <x-forms.errors/>
 

@@ -1,7 +1,7 @@
 <x-layout title="Edit Project">
     <h1>Edit Project</h1>
 
-    <a href="{{ route('projects.index') }}">Projects</a>
+    <a href="{{ route('projects.show', $project) }}">Project</a>
 
     <x-forms.errors/>
 
