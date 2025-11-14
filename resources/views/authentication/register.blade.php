@@ -1,13 +1,7 @@
 <x-layout title="Register">
     <h1>Register</h1>
 
-    @if ($errors -> any())
-        <ul>
-            @foreach ($errors -> all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+    <x-forms.errors/>
 
     <form method="POST" action="{{ route('register.store') }}">
         @method("POST")
