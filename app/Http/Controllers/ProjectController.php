@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Validation\Rule;
 
 class ProjectController extends Controller
 {
@@ -36,7 +35,8 @@ class ProjectController extends Controller
     {
         $attributes = $request -> validate([
             "name" => ["required", "max:150"],
-            "description" => "nullable"
+            "description" => "nullable",
+            "finish_date" => ["required", Rule::date() -> after(today() -> addDays(1))]
         ]);
 
         $project = Auth::user() -> projects() -> create($attributes);
