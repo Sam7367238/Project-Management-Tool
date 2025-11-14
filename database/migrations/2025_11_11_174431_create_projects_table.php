@@ -16,6 +16,8 @@ return new class extends Migration
             $table->id();
             $table -> string("name", 150);
             $table -> text("description") -> nullable();
+            $table -> date("finish_date");
+            $table -> boolean("is_finished") -> default(false);
             $table -> foreignIdFor(User::class) -> constrained() -> onDelete("cascade");
             $table->timestamps();
         });

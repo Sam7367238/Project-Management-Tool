@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use function Symfony\Component\Clock\now;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
@@ -19,6 +21,9 @@ class ProjectFactory extends Factory
     {
         return [
             "name" => fake() -> sentence(3),
+            "description" => fake() -> paragraph(),
+            "finish_date" => fake() -> date(),
+            "is_finished" => fake() -> boolean(),
             "user_id" => User::factory()
         ];
     }
