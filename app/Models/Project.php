@@ -10,7 +10,7 @@ class Project extends Model
 {
     /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
-    protected $fillable = ["name"];
+    protected $fillable = ["name", "description"];
 
     public function user(): BelongsTo {
         return $this -> belongsTo(User::class);

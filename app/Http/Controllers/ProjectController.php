@@ -35,7 +35,8 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $attributes = $request -> validate([
-            "name" => ["required", "max:150"]
+            "name" => ["required", "max:150"],
+            "description" => "nullable"
         ]);
 
         $project = Auth::user() -> projects() -> create($attributes);
@@ -71,7 +72,8 @@ class ProjectController extends Controller
         Gate::authorize("owner", $project);
 
         $attributes = $request -> validate([
-            "name" => ["required", "max:150"]
+            "name" => ["required", "max:150"],
+            "description" => "nullable"
         ]);
 
         $project -> update($attributes);
