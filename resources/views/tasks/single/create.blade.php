@@ -8,6 +8,6 @@
     <form action="{{ route('tasks.store') }}" method="POST">
         @method("POST")
 
-        <x-forms.task-single/>
+        <x-forms.task/>
     </form>
 </x-layout>

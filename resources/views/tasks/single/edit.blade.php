@@ -6,6 +6,6 @@
     <form method="POST" action="{{ route('tasks.update', $task) }}">
         @method("PUT")
 
-        <x-forms.task-single :task="$task"/>
+        <x-forms.task :task="$task"/>
     </form>
 </x-layout>

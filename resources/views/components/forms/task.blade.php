@@ -7,7 +7,7 @@
 
 <div>
     <label for="completed">Completed</label>
-    <input type="checkbox" name="completed" {{ old('completed', $task -> completed ?? false) ? 'checked' : '' }}>
+    <input type="checkbox" name="completed" @checked(old('completed', $task -> completed ?? ''))>
 </div>
 
 <input type="submit" value="Save">

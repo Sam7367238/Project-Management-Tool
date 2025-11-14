@@ -8,6 +8,6 @@
     <form action="{{ route('projects.projectTasks.store', $project) }}" method="POST">
         @method("POST")
 
-        <x-forms.task-project/>
+        <x-forms.task/>
     </form>
 </x-layout>
