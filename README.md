@@ -13,7 +13,10 @@ This project will be developed using Laravel, this is a basic project management
 
 ## Features
 
-- Blank for now
+- Create Tasks & Projects
+- Tasks For Projects
+- Finish Date For Project With Notification
+- Authentication & Authorization
 
 ### The Team
 
