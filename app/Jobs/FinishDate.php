@@ -29,7 +29,6 @@ class FinishDate implements ShouldQueue
         foreach ($projects as $project) {
             $project -> update(["is_finished" => true]);
             $project -> user -> notify(new ProjectFinished($project));
-            logger($project -> name . " is now finished.");
         }
     }
 }
